@@ -1,5 +1,6 @@
 window.onload = () => {
   attachButtonHandler()
+  document.getElementById("dl").addEventListener('click', dlCanvas, false);
 }
 
 const attachButtonHandler = () => {
@@ -57,3 +58,12 @@ const draw = () => {
   }
 
 }
+
+function dlCanvas() {
+  const canvas = document.getElementById("canvas")
+  var dt = canvas.toDataURL('image/png'); 
+  dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
+  dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png');
+  this.href = dt;
+}
+
