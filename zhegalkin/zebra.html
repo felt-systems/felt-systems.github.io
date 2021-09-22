@@ -1,0 +1,44 @@
+<body>
+  <head>
+    <style> 
+      .box {
+        border:1px solid black;
+        display:inline-block;
+        padding:5px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.5/math.min.js"></script>
+    <script src=./zebra.js></script>
+  </head>
+  <h1>Zhegalkin Zebra Motives</h1>
+  <canvas id="canvas"> </canvas>
+  <div class="box">
+    <h2>Reigns </h2>
+    <div class="box">
+      <h2>size=</h2>
+      <input id="size" value=500></input>
+    </div>
+    <div class="box">
+      <h2>scale=</h2>
+      <input id="scale" value=5></input>
+    </div>
+    <div class="box">
+      <h2>V=</h2>
+      <textarea rows=10 cols=40 id="V">
+[v_2,v_3,v_4,v_6,math.multiply(2,v_4)]
+      </textarea>
+    </div>
+    <div class="box">
+      <h2>M=</h2>
+      <textarea rows=10 cols=20 id="M">
+[[1,0,0,0,0]
+,[0,1,0,0,1]
+,[0,0,1,0,0]
+,[0,0,0,1,1]
+,[0,0,0,0,1]]
+      </textarea>
+    </div>
+    <button id="draw"> draw </button>
+  </div>
+  <a href="https://export.arxiv.org/pdf/1805.09627">Zhegalkin Zebra Motives - Jan STIENSTRA</a>
+</body>
