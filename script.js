@@ -6,7 +6,7 @@ const pBLUE = (x,y) => {
           , vy : 0
           , fy : 0
           , m : 100
-          , c : "blue"}
+          , c : "DeepSkyBlue"}
 }
 
 
@@ -18,7 +18,7 @@ const pRED = (x,y) => {
           , vy : 0
           , fy : 0
           , m : 10
-          , c : "red"}
+          , c : "Fuchsia"}
 }
 
 
@@ -41,7 +41,7 @@ window.onload = () => {
   canvas.height = 1000;
   const ctx = canvas.getContext("2d");
   setInterval(() => {
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "CornSilk";
     ctx.fillRect(0,0,1000,1000);
     drawState(ctx)(state);
     updateState(state);
@@ -86,14 +86,14 @@ const stateTransition = (particle) => {
   if ( (Math.abs(particle.vx) + Math.abs(particle.vy)) > 100 ) {
     particle.vx = particle.vx / 100;
     particle.vy = particle.vy / 100;
-    if ( particle.c == "red" ) {
-      particle.c = "blue";
+    if ( particle.c == "Fuchsia" ) {
+      particle.c = "DeepSkyBlue";
       particle.m = 100;
-    } else if (particle.c == "blue" ) {
-      particle.c = "green";
+    } else if (particle.c == "DeepSkyBlue" ) {
+      particle.c = "White";
       particle.m = 1000;
-    } else if (particle.c == "green" ) {
-      particle.c = "red";
+    } else if (particle.c == "White" ) {
+      particle.c = "Fuchsia";
       particle.m = 10;
     }
   }
