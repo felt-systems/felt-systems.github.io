@@ -35,7 +35,43 @@ var state = { particles : [pRED(300,300),
                            pBLUE(600,500)
 
                            ] };
+
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+
+
+getJSON("./concepts.json",(err, data) => { return data });
+
+
 window.onload = () => {
+  const concepts = getJSON("./concepts.json",(err, data) => {
+    console.log(data);
+    const frayja = document.getElementById("frayja");
+
+    for (const [key, value] of Object.entries(data.frayja)) {
+      console.log(`${key}: ${value}`);
+      var a = document.createElement('a');
+      var linkText = document.createTextNode(key);
+      a.appendChild(linkText);
+      a.title = value;
+      a.href = value;
+      frayja.appendChild(a);
+    } 
+
+  });
+
   const canvas = document.getElementById("canvas");
   canvas.width = 1000;
   canvas.height = 1000;
