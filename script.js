@@ -52,21 +52,21 @@ var getJSON = function(url, callback) {
 };
 
 
-getJSON("./concepts.json",(err, data) => { return data });
+
 
 
 window.onload = () => {
   const concepts = getJSON("./concepts.json",(err, data) => {
     console.log(data);
     const frayja = document.getElementById("frayja");
-
+    console.log(data);
     for (const [key, value] of Object.entries(data.frayja)) {
       console.log(`${key}: ${value}`);
       var a = document.createElement('a');
       var linkText = document.createTextNode(key);
       a.appendChild(linkText);
-      a.title = value;
-      a.href = value;
+      a.title = value.title;
+      a.href = value.href;
       frayja.appendChild(a);
     } 
 

@@ -1,7 +1,20 @@
 {
   "frayja" : {
-    "🦓" : "./zhegalkin/zebra.html",
-    "🍋" : "https://delicious-lemon.github.io/",
-    "🏗" : "https://www.youtube.com/watch?v=RkQALDAXBMk"
+    "🦓" : {
+      "title" : "zhegalkin zebra motifs",
+      "href" : "./zhegalkin/zebra.html"
+    },
+    "🍋" : {
+      "title" : "delicious lemon",
+      "href" : "https://delicious-lemon.github.io/"
+    },
+    "🏗" : {
+      "title" : "Risky Construction [salfobo]",
+      "href" : "https://www.youtube.com/watch?v=RkQALDAXBMk"
+    },
+    "⩎" : {
+      "title" : "The Sign Field - Good News, Bad News [Beta Reticuli TV]",
+      "href" : "https://www.youtube.com/watch?v=uj9VTlH36hE"
+    }
   }
 }
